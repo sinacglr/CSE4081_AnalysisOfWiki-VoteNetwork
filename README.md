@@ -1,5 +1,5 @@
-# Install Dependencies
+### Install Dependencies
 pip install pandas networkx matplotlib numpy python-louvain
 
-# Run the code
+### Run the code
 python main.py
