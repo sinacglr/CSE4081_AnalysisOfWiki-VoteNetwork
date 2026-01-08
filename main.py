@@ -56,7 +56,6 @@ nx.draw(G_ego, pos_ego, node_color='orange', node_size=50, with_labels=False, al
 nx.draw_networkx_nodes(G_ego, pos_ego, nodelist=[top_node], node_color='red', node_size=300) 
 plt.title(f"Ego-Net of Node {top_node}")
 plt.savefig('1b_ego_net.png', dpi=150)
-print("Saved 1b_ego_net.png")
 
 # NETWORK METRICS & COMPONENTS
 wcc = list(nx.weakly_connected_components(G))
@@ -227,7 +226,6 @@ nx.draw(G_viz, pos=pos_spring,
 
 plt.tight_layout()
 plt.savefig('2_layout_comparison.png', dpi=300)
-print("Saved 2_layout_comparison.png")
 
 # K-Core Filter (k=20)
 G_core = nx.k_core(G_undir, k=20) 
@@ -246,7 +244,6 @@ nx.draw_networkx_edges(G_core, pos_core, alpha=0.3, width=0.2)
 plt.title(f"Filtered View: K-Core (k=20) | Nodes: {len(G_core)}")
 plt.axis('off')
 plt.savefig('3_filtered_view_kcore.png', dpi=300)
-print("Saved 3_filtered_view_kcore.png")
 
 def run_sir_simulation(G, seed_nodes, beta=0.1, gamma=1.0, steps=20):
     status = {n: 'S' for n in G.nodes()}
@@ -293,6 +290,3 @@ plt.ylabel("Number of Infected Nodes")
 plt.legend()
 plt.grid(True)
 plt.savefig('4_diffusion_simulation.png', dpi=150)
-print("Saved 4_diffusion_simulation.png")
-
-print("\nAll files generated.")
